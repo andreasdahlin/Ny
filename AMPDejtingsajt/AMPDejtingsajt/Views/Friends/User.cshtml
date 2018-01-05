@@ -1,0 +1,33 @@
+﻿@model AMPDejtingsajt.ViewModels.FriendsViewModel
+
+@{
+    ViewBag.Title = "User";
+}
+
+<h2>User</h2>
+
+<div class="well">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sändare</th>
+                    <th>Datum</th>
+                    <th>Meddelande</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Person)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
