@@ -45,7 +45,10 @@ namespace AMPDejtingsajt.Controllers
         {
             var model = GetProfileWall();
             var user = personRepository.GetById(id);
+            var message = dataContext.Message.Where(p => p.RecieverId == id).ToList();
+
             model.Person = user;
+            model.Message = message;
 
             return View(model);
 
@@ -53,7 +56,7 @@ namespace AMPDejtingsajt.Controllers
 
         private ProfileWallViewModel GetProfileWall()
         {
-            return new ProfileWallViewModel { Person = new Person(), Message = new Message() };
+            return new ProfileWallViewModel { Person = new Person(), Message = new List<Message>() };
         }
 
 

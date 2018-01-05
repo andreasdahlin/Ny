@@ -76,11 +76,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>@Html.DisplayFor(item => item.Message.Sender)</td>
-                            <td>@Html.DisplayFor(item => item.Message.MessageDate)</td>
-                            <td>@Html.DisplayFor(item => item.Message.MessageText)</td>
-                        </tr>
+                        @foreach (var item in Model.Message)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.SenderId)</td>
+                                <td>@Html.DisplayFor(modelItem => item.MessageDate)</td>
+                                <td>@Html.DisplayFor(modelItem => item.MessageText)</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

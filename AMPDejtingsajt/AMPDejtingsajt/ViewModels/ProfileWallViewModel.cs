@@ -9,6 +9,6 @@ namespace AMPDejtingsajt.ViewModels
     public class ProfileWallViewModel
     {
         public Person Person { get; set; }
-        public Message Message { get; set; }
+        public IEnumerable<Message> Message { get; set; }
     }
 }
