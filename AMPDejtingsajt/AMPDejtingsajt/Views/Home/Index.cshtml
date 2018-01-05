@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AMPDejtingsajt.Models.Person>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <img src="/Images/oldpeople.jpg" class="img-responsive" />
+    </div>
+</div>
+<div>
+    <p>
+        Dessa godingar finns redan registrerade på vår dejtingsajt:
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a href="http://localhost:52243/ProfilePage/User/1">
+            <img border="0" alt="Test" src="@Url.Action("Image1", "ProfilePage")">
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="http://localhost:52243/ProfilePage/User/2">
+            <img border="0" alt="Test" src="@Url.Action("Image2", "ProfilePage")">
+        </a>
+
+    </div>
+
+    <div class="col-md-4">
+        <a href="http://localhost:52243/ProfilePage/User/3">
+            <img border="0" alt="Test" src="@Url.Action("Image3", "ProfilePage")">
+        </a>
+    </div>
+
+</div>
+
+@*<div class="row">
+
+        @foreach (var item in Model)
+         {
+            <div class="col-md-4">
+                @Html.DisplayFor(modelItem => item.FirstName)
+                <img src="@Url.Action("Image", "ProfilePage", new { id = item.PersonID })" class="img-responsive" />
+            </div>
+         }
+
+    </div>*@
+

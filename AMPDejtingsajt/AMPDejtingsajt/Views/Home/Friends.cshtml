@@ -1,0 +1,28 @@
+﻿@model IEnumerable<AMPDejtingsajt.Models.Person>
+
+@{
+    ViewBag.Title = "Friends";
+}
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <p>test</p>
+        <div class="col-md-6">
+            <table class="table">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="col-md-4" style="border-left: 1px solid black"><p>test</p></div>
+</div>

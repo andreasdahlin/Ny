@@ -1,0 +1,93 @@
+﻿@model AMPDejtingsajt.ViewModels.ProfileWallViewModel
+
+@{
+    ViewBag.Title = "User";
+}
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="col-md-4">
+            <img src="@Url.Action("Image", new { id = Model.Person.PersonID })" class="img-responsive" />
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>About me</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Firstname: @Html.DisplayFor(item => item.Person.FirstName)
+                                    <br />
+                                    Lastname: @Html.DisplayFor(item => item.Person.LastName)
+                                    <br />
+                                    Gender: @Html.DisplayFor(item => item.Person.Gender)
+                                    <br />
+                                    City: @Html.DisplayFor(item => item.Person.City)
+                                    <br />
+                                    Preference: @Html.DisplayFor(item => item.Person.Preference)
+                                    <br />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="well">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Presentation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Presentation: @Html.DisplayFor(item => item.Person.PresentationText)
+                                    <br />
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <input type="text" placeholder="Skriv ett meddelande" />
+        <button type="button" onclick="location.href = '@Url.Action("AddMessage", "ProfilePage", new { receiverID = Model.Person.PersonID })'">Send message</button>
+        <div class="well">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sändare</th>
+                            <th>Datum</th>
+                            <th>Meddelande</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(item => item.Message.Sender)</td>
+                            <td>@Html.DisplayFor(item => item.Message.MessageDate)</td>
+                            <td>@Html.DisplayFor(item => item.Message.MessageText)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button type="button" onclick="location.href = '@Url.Action("AddFriend", "ProfilePage", new { receiverID = Model.Person.PersonID })'">Send Friend request</button>
+    </div>
+
+</div>
+
+
