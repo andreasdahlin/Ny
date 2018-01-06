@@ -38,10 +38,8 @@ namespace AMPDejtingsajt.Models
         [Display(Name = "Social Number:")]
         public string SocialNumber { get; set; }
 
-        //[Required(ErrorMessage = "A gender is required.")]
-        //[StringLength(5, MinimumLength = 4, ErrorMessage = "Your choice of gender needs to be atleast 4 letters long. You can only chose between a 'Man' and a 'Woman'.")]
-        //[RegularExpression(@"^[a-zA-Z]*$", ErrorMessage = "Your choice of gender can only contain letters")]
-        //[Display(Name = "Gender:")]
+        [Required(ErrorMessage = "A gender is required.")]
+        [Display(Name = "Gender:")]
         public string Gender { get; set; }
 
         [Required(ErrorMessage = "A city is required.")]

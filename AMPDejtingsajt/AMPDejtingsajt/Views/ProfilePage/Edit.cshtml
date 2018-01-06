@@ -27,14 +27,6 @@
                     </div>
                 </div>
 
-                @*<div>
-                        @Html.LabelFor(model => model.Gender)
-                        <div>
-                            @Html.EditorFor(model => model.Gender)
-                            @Html.ValidationMessageFor(model => model.Gender, "")
-                        </div>
-                    </div>*@
-
                 <div>
                     @Html.LabelFor(model => model.Gender)
                     <div>
@@ -42,7 +34,7 @@
                                 {
                                     new SelectListItem { Text = "Male", Value = "Male"},
                                     new SelectListItem { Text = "Female", Value = "Female"}
-                                }, "Select Gender")
+                                })
                     </div>
                 </div>
 
@@ -57,8 +49,11 @@
                 <div>
                     @Html.LabelFor(model => model.Preference)
                     <div>
-                        @Html.EditorFor(model => model.Preference)
-                        @Html.ValidationMessageFor(model => model.Preference, "")
+                        @Html.DropDownList("Preference", new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "Male", Value = "Male"},
+                                    new SelectListItem { Text = "Female", Value = "Female"}
+                                })
                     </div>
                 </div>
 

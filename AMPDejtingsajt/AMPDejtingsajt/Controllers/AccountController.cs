@@ -67,7 +67,7 @@ namespace AMPDejtingsajt.Controllers
                     Session["PersonID"] = validation.PersonID.ToString();
                     string id = (string)(Session["PersonID"]);
                     Session["Username"] = validation.UserName.ToString();
-                    return RedirectToAction("User", "ProfilePage", new { area = "" });
+                    return RedirectToAction("Index", "Home", new { area = "" });
                 }
                 else
                 {
@@ -77,6 +77,13 @@ namespace AMPDejtingsajt.Controllers
 
             return View();
 
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+            Session.Remove("PersonID");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
