@@ -148,8 +148,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Internationalization\Resource.sv-se.Designer.cs">
-      <DependentUpon>Resource.sv-se.resx</DependentUpon>
+    <Compile Include="Internationalization\Resource.sv.Designer.cs">
+      <DependentUpon>Resource.sv.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -188,9 +188,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Internationalization\Resource.sv-se.resx">
+    <EmbeddedResource Include="Internationalization\Resource.sv.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.sv-se.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resource.sv.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Internationalization\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
