@@ -50,6 +50,8 @@ namespace AMPDejtingsajt.Controllers
             model.Person = user;
             model.Message = message;
 
+            ViewBag.UserProfile = id; 
+
             return View(model);
 
         }
