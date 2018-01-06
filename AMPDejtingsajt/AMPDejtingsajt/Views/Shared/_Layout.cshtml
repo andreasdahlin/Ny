@@ -15,10 +15,10 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                @Html.ActionLink("OldInder - Tinder for oldies", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.OldInder, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Frontpage", "Index", "Home", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+                <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.FrontPage, "Index", "Home", new { area = "" }, new { @class = "nav navbar-nav" })</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

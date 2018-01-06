@@ -1,9 +1,16 @@
 ﻿
-@if (Session["PersonID"] != null)
+@if (Session["PersonID"] == null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.LogIn, "Login", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+    </ul>
+}
+else
 {
     <ul class="nav navbar-nav navbar-left">
-        <li>@Html.ActionLink("Profile page", "User", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
-        <li>@Html.ActionLink("Friends", "Friends", "Home", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.ProfilePage, "User", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Friends, "Friends", "Home", new { area = "" }, new { @class = "nav navbar-nav" })</li>
     </ul>
     <form class="navbar-form navbar-left" action="/Home/Create">
         <div class="form-group">
@@ -13,17 +20,10 @@
     </form>
 
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("+1 Friend Request", "Friends", "Home", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
-        <li>@Html.ActionLink("Update profile", "Edit", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
-        <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
-        <li>@Html.ActionLink("Logout", "LogOut", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
-    </ul>
-}
-else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
-        <li>@Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.FriendRequest, "Friends", "Home", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.UpdateProfile, "Edit", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Register, "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Logout, "LogOut", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
     </ul>
 }
 
