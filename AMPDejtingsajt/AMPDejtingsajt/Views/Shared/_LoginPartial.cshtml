@@ -1,0 +1,17 @@
+﻿@if (Session["PersonID"] != null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("+1 Friend Request", "Friends", "Home", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink("Update profile", "Index", "ProfilePage", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink("Logout", "Logout", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+    </ul>
+}
+
