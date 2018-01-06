@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 
-namespace AMPDejtingsajt.Interfaces
+namespace DataLayer.Interfaces
 {
     public interface IRepository<T>
     {

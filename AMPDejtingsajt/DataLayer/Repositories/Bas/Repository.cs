@@ -1,4 +1,4 @@
-﻿using AMPDejtingsajt.Interfaces;
+﻿using DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 
-namespace AMPDejtingsajt.Repositories.Bas
+namespace DataLayer.Repositories.Bas
 {
     public class Repository<T> : IRepository<T> where T : class
     {

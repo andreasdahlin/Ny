@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace AMPDejtingsajt.Models
+namespace DataLayer.Models
 {
     public class Person
     {
@@ -77,11 +77,11 @@ namespace AMPDejtingsajt.Models
         public virtual ICollection<FriendRequest> FriendRequestSend { get; set; }
         public virtual ICollection<Message> MessageRecieve { get; set; }
         public virtual ICollection<Message> MessageSend { get; set; }
-        public string FileName { get; internal set; }
+        public string FileName { get;  set; }
 
 
-        public string ContentType { get; internal set; }
-        public byte[] File { get; internal set; }
+        public string ContentType { get;  set; }
+        public byte[] File { get;  set; }
 
         public bool isSearchable { get; set; }
     }

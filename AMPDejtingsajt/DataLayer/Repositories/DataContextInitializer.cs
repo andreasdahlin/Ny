@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace AMPDejtingsajt.Repositories
+namespace DataLayer.Repositories
 {
-    public class DataContextInitializer : DropCreateDatabaseIfModelChanges<DataContext>
+    public class DataContextInitializer : DropCreateDatabaseAlways<DataContext>
     {
 
     }

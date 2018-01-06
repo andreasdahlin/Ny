@@ -1,5 +1,5 @@
-﻿using AMPDejtingsajt.Models;
-using AMPDejtingsajt.Repositories;
+﻿using DataLayer.Models;
+using DataLayer.Repositories;
 using AMPDejtingsajt.ViewModels;
 using System;
 using System.Collections.Generic;
