@@ -22,6 +22,7 @@ namespace AMPDejtingsajt.Controllers
         [HttpGet]
         public ActionResult User(int id)
         {
+            List<Person> userID = new List<Person>();
             var model = GetFriends();
             List<int> ids = new List<int>();
             var friendRequests = dataContext.FriendRequest.Where(p => p.ReceiverId == id).ToList();
@@ -31,14 +32,21 @@ namespace AMPDejtingsajt.Controllers
                 ids.Add(item.SenderId);
             }
 
-            foreach (var personID in ids)
+            foreach (var bajs in ids)
             {
-                var userID = dataContext.User.Where(p => p.PersonID == personID);
-                model.Person = userID;
+                var person = dataContext.User.Where(p => p.PersonID == bajs).ToList();
+
+                foreach (var finalPerson in person)
+                {
+                    userID.Add(finalPerson);
+                }
             }
+
+            model.Person = userID;
 
             return View(model);
         }
+
 
         private FriendsViewModel GetFriends()
         {

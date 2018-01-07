@@ -55,7 +55,6 @@ namespace DataLayer.Models
         [Display(Name = "ProfilePicture:")]
         public string ProfilePicture { get; set; }
 
-        [RegularExpression(@"^[a-zA-Z0-9]*$")]
         [Display(Name = "Presentation:")]
         public string PresentationText { get; set; }
 
@@ -77,6 +76,7 @@ namespace DataLayer.Models
         public virtual ICollection<FriendRequest> FriendRequestSend { get; set; }
         public virtual ICollection<Message> MessageRecieve { get; set; }
         public virtual ICollection<Message> MessageSend { get; set; }
+
         public string FileName { get;  set; }
 
 

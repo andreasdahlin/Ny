@@ -14,8 +14,9 @@ namespace AMPDejtingsajt.Controllers
 
         public ActionResult Index()
         {
+            
             var profiles = dataContext.User.ToList();
-
+            ViewBag.ExamplePerson = "/Images/test.png";
             return View(profiles);
         }
 

@@ -9,7 +9,7 @@ else
 {
     <ul class="nav navbar-nav navbar-left">
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.ProfilePage, "User", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
-        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Friends, "Friends", "Home", new { area = "" }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Friends, "User", "Friends", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
     </ul>
     <form class="navbar-form navbar-left" action="/Home/Create">
         <div class="form-group">
@@ -19,9 +19,8 @@ else
     </form>
 
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.FriendRequest, "Friends", "Home", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
+        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.FriendRequest, "User", "Friends", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.UpdateProfile, "Edit", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
-        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Register, "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Logout, "LogOut", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
     </ul>
 }

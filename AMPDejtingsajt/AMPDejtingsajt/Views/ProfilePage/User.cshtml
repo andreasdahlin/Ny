@@ -9,7 +9,16 @@
 <div class="row">
     <div class="col-md-6">
         <div class="col-md-4">
-            <img src="@Url.Action("Image", new { id = Model.Person.PersonID })" class="img-responsive" />
+            @{
+                if(Model.Person.FileName == null)
+                {
+                    <img src="/Images/test.png" class="img-responsive" />
+                }
+                else
+                {
+                    <img src="@Url.Action("Image", new { id = Model.Person.PersonID })" class="img-responsive" />
+                }
+            }
         </div>
         <div class="col-md-8">
             <div class="well">
@@ -51,7 +60,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    Presentation: @Html.DisplayFor(item => item.Person.PresentationText)
+                                     @Html.DisplayFor(item => item.Person.PresentationText)
                                     <br />
 
                                 </td>

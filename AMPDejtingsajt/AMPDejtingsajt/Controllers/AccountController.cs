@@ -19,7 +19,17 @@ namespace AMPDejtingsajt.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            string personid = (string)(Session["PersonID"]);
+
+            if (personid == null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
+            
         }
 
         [HttpPost]

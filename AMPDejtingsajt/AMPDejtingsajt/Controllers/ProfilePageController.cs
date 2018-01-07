@@ -164,6 +164,8 @@ namespace AMPDejtingsajt.Controllers
                 db.FriendRequest.Add(friendRequest);
                 db.SaveChanges();
 
+                ViewBag.Alert = "You have a new friend";
+
             }
         }
     }

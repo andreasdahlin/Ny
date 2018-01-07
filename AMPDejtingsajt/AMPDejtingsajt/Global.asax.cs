@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DataLayer.Models;
 
 namespace AMPDejtingsajt
 {
@@ -17,6 +18,7 @@ namespace AMPDejtingsajt
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
         }
     }
 }
