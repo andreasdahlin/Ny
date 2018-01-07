@@ -22,8 +22,8 @@ namespace AMPDejtingsajt.Controllers
         [HttpGet]
         public ActionResult User(int id)
         {
-            List<Person> userID = new List<Person>();
             var model = GetFriends();
+            List<Person> userID = new List<Person>();
             List<int> ids = new List<int>();
             var friendRequests = dataContext.FriendRequest.Where(p => p.ReceiverId == id).ToList();
 
@@ -32,9 +32,9 @@ namespace AMPDejtingsajt.Controllers
                 ids.Add(item.SenderId);
             }
 
-            foreach (var bajs in ids)
+            foreach (var itemId in ids)
             {
-                var person = dataContext.User.Where(p => p.PersonID == bajs).ToList();
+                var person = dataContext.User.Where(p => p.PersonID == itemId).ToList();
 
                 foreach (var finalPerson in person)
                 {
@@ -42,7 +42,27 @@ namespace AMPDejtingsajt.Controllers
                 }
             }
 
+            List<Person> userIDTwo = new List<Person>();
+            List<int> idsTwo = new List<int>();
+            var friendRequestsTwo = dataContext.FriendRequest.Where(p => p.SenderId == id).ToList();
+
+            foreach (var item in friendRequestsTwo)
+            {
+                idsTwo.Add(item.ReceiverId);
+            }
+
+            foreach (var itemIdTwo in idsTwo)
+            {
+                var person = dataContext.User.Where(p => p.PersonID == itemIdTwo).ToList();
+
+                foreach (var finalPerson in person)
+                {
+                    userIDTwo.Add(finalPerson);
+                }
+            }
+
             model.Person = userID;
+            model.PersonTwo = userIDTwo;
 
             return View(model);
         }
@@ -50,7 +70,7 @@ namespace AMPDejtingsajt.Controllers
 
         private FriendsViewModel GetFriends()
         {
-            return new FriendsViewModel { Person = new List<Person>() };
+            return new FriendsViewModel { Person = new List<Person>(), PersonTwo = new List<Person>() };
         }
     }
 }

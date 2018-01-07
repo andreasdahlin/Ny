@@ -9,5 +9,6 @@ namespace AMPDejtingsajt.ViewModels
     public class FriendsViewModel
     {
         public IEnumerable<Person> Person { get; set; }
+        public IEnumerable<Person> PersonTwo { get; set; }
     }
 }

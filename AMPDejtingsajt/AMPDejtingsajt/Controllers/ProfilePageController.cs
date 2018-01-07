@@ -28,18 +28,6 @@ namespace AMPDejtingsajt.Controllers
             return View();
         }
 
-        //public ActionResult User()
-        //{
-        //    if (Session["PersonID"] != null)
-        //    {
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Login", "Account", new { area = "" });
-        //    }
-        //}
-
         [HttpGet]
         public ActionResult User(int id)
         {
