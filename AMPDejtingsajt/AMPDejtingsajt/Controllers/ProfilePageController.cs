@@ -43,17 +43,25 @@ namespace AMPDejtingsajt.Controllers
         [HttpGet]
         public ActionResult User(int id)
         {
-            var model = GetProfileWall();
-            var user = personRepository.GetById(id);
-            var message = dataContext.Message.Where(p => p.RecieverId == id).ToList();
+            string personid = (string)(Session["PersonID"]);
+            
+            if(personid == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                var model = GetProfileWall();
+                var user = personRepository.GetById(id);
+                var message = dataContext.Message.Where(p => p.RecieverId == id).ToList();
 
-            model.Person = user;
-            model.Message = message;
+                model.Person = user;
+                model.Message = message;
 
-            ViewBag.UserProfile = id; 
+                ViewBag.UserProfile = id;
 
-            return View(model);
-
+                return View(model);
+            }
         }
 
         private ProfileWallViewModel GetProfileWall()
