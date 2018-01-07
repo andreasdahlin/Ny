@@ -143,25 +143,36 @@ namespace AMPDejtingsajt.Controllers
             }
         }
 
-        public void AddFriend(int receiverID)
+        public ActionResult AddFriend(int receiverID)
         {
             using (DataContext db = new DataContext())
             {
                 string senderID = (string)(Session["PersonID"]);
                 int newSenderID = Int32.Parse(senderID);
-                var friendRequest = new FriendRequest
+                var friendRequests = dataContext.FriendRequest.Where(p => p.ReceiverId == receiverID)
+                    .Where(p => p.SenderId == newSenderID)
+                    .ToList();
+                if (!friendRequests.Any())
                 {
-                    SenderId = newSenderID,
-                    ReceiverId = receiverID,
-                    Status = "In progress",
-                    FriendRequestDate = DateTime.Today
-                };
+                    var friendRequest = new FriendRequest
+                    {
+                        SenderId = newSenderID,
+                        ReceiverId = receiverID,
+                        Status = "In progress",
+                        FriendRequestDate = DateTime.Today
+                    };
 
-                db.FriendRequest.Add(friendRequest);
-                db.SaveChanges();
+                    db.FriendRequest.Add(friendRequest);
+                    db.SaveChanges();
 
-                ViewBag.Alert = "You have a new friend";
+                    return RedirectToAction("User", "ProfilePage", new { id = receiverID });
+                }
 
+                else {
+                    return RedirectToAction("Index", "Home", new { area = "" });
+                }
+              
+        
             }
         }
     }
