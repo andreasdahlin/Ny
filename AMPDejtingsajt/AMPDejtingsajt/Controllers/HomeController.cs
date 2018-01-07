@@ -16,7 +16,10 @@ namespace AMPDejtingsajt.Controllers
         {
             
             var profiles = dataContext.User.ToList();
-            ViewBag.ExamplePerson = "/Images/test.png";
+            ViewBag.ExamplePerson = "/Images/example1.jpg";
+            ViewBag.ExamplePersonTwo = "/Images/example2.jpg";
+            ViewBag.ExamplePersonThree = "/Images/example3.jpg";
+            ViewBag.ExamplePersonFour = "/Images/example4.png";
             return View(profiles);
         }
 

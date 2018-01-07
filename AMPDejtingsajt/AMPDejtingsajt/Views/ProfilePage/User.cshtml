@@ -19,7 +19,10 @@
                     <img src="@Url.Action("Image", new { id = Model.Person.PersonID })" class="img-responsive" />
                 }
             }
+            <br />
+            <button type="button" onclick="location.href = '@Url.Action("AddFriend", "ProfilePage", new { receiverID = Model.Person.PersonID })'">Follow person</button>
         </div>
+
         <div class="col-md-8">
             <div class="well">
                 <div class="table-responsive">
@@ -98,7 +101,6 @@
                 </table>
             </div>
         </div>
-        <button type="button" onclick="location.href = '@Url.Action("AddFriend", "ProfilePage", new { receiverID = Model.Person.PersonID })'">Send Friend request</button>
     </div>
 
 </div>

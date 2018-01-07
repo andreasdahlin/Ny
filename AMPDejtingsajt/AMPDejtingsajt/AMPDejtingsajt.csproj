@@ -112,7 +112,11 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
-    <Content Include="Images\oldpeople.jpg" />
+    <Content Include="Images\example1.jpg" />
+    <Content Include="Images\example2.jpg" />
+    <Content Include="Images\example3.jpg" />
+    <Content Include="Images\example4.png" />
+    <Content Include="Images\happiness3.jpg" />
     <Content Include="Images\test.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

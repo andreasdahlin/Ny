@@ -22,21 +22,21 @@ namespace DataLayer.Repositories
                 Mail = "jesper@live.se",
                 UserName = "JesperAN",
                 Password = "test",
-                //PresentationText = "Hej jag heter Jesper. Det här är min exempeltext. Jag tycker om att ragga på brudar. ",
+                PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 isSearchable = false
             };
 
             var examplePerson2 = new Person
             {
-                FirstName = "Jonatan",
+                FirstName = "Victoria",
                 LastName = "Svensson",
                 SocialNumber = "199108191111",
-                Gender = "Male",
+                Gender = "Female",
                 City = "Stockholm",
-                Mail = "jonatan@live.se",
-                UserName = "AndreasSV",
+                Mail = "Vvictoria@live.se",
+                UserName = "VictoriaSV",
                 Password = "test",
-                //PresentationText = "Hej jag heter Jonatan. Det här är min exempeltext. Jag tycker om att ragga på brudar. ",
+                PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 isSearchable = false
             };
 
@@ -50,13 +50,28 @@ namespace DataLayer.Repositories
                 Mail = "robert@live.se",
                 UserName = "RobertJA",
                 Password = "test",
-                //PresentationText = "Hej jag heter Robert. Det här är min exempeltext. Jag tycker om att ragga på brudar. ",
+                PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                isSearchable = false
+            };
+
+            var examplePerson4 = new Person
+            {
+                FirstName = "Britt",
+                LastName = "Rogthenstein",
+                SocialNumber = "199108191111",
+                Gender = "Female",
+                City = "Stockholm",
+                Mail = "britt@live.se",
+                UserName = "BrittVO",
+                Password = "test",
+                PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 isSearchable = false
             };
 
             dataContext.User.Add(examplePerson1);
             dataContext.User.Add(examplePerson2);
             dataContext.User.Add(examplePerson3);
+            dataContext.User.Add(examplePerson4);
             dataContext.SaveChanges();
             
         }

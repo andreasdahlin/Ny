@@ -102,26 +102,6 @@ namespace AMPDejtingsajt.Controllers
             return File(user.File, user.ContentType);
         }
 
-        public ActionResult Image1()
-        {
-            var user = personRepository.GetById(1);
-
-            return File(user.File, user.ContentType);
-        }
-
-        public ActionResult Image2()
-        {
-            var user = personRepository.GetById(2);
-
-            return File(user.File, user.ContentType);
-        }
-
-        public ActionResult Image3()
-        {
-            var user = personRepository.GetById(3);
-
-            return File(user.File, user.ContentType);
-        }
 
         public void AddMessage(int receiverID)
         {
