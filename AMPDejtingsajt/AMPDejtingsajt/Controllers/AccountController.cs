@@ -35,28 +35,36 @@ namespace AMPDejtingsajt.Controllers
         [HttpPost]
         public ActionResult Register(Person person, HttpPostedFileBase upload)
         {
-            if (upload != null && upload.ContentLength > 0)
+            try
             {
-                person.FileName = upload.FileName;
-                person.ContentType = upload.ContentType;
-
-                using (var reader = new BinaryReader(upload.InputStream))
+                if (upload != null && upload.ContentLength > 0)
                 {
-                    person.File = reader.ReadBytes(upload.ContentLength);
-                }
-            }
+                    person.FileName = upload.FileName;
+                    person.ContentType = upload.ContentType;
 
-            if (ModelState.IsValid)
+                    using (var reader = new BinaryReader(upload.InputStream))
+                    {
+                        person.File = reader.ReadBytes(upload.ContentLength);
+                    }
+                }
+
+                if (ModelState.IsValid)
+                {
+                    using (DataContext db = new DataContext())
+                    {
+                        db.User.Add(person);
+                        db.SaveChanges();
+                    }
+                    ModelState.Clear();
+                    ViewBag.Message = person.UserName + " successfully registered.";
+                }
+                return View();
+            }
+            catch (Exception)
             {
-                using (DataContext db = new DataContext())
-                {
-                    db.User.Add(person);
-                    db.SaveChanges();
-                }
-                ModelState.Clear();
-                ViewBag.Message = person.UserName + " successfully registered.";
+                throw;
             }
-            return View();
+            
         }
 
         //Login

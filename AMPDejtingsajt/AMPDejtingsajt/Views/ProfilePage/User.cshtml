@@ -36,15 +36,19 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    Firstname: @Html.DisplayFor(item => item.Person.FirstName)
+                                    <strong>Firstname: </strong>@Html.DisplayFor(item => item.Person.FirstName)
                                     <br />
-                                    Lastname: @Html.DisplayFor(item => item.Person.LastName)
                                     <br />
-                                    Gender: @Html.DisplayFor(item => item.Person.Gender)
+                                    <strong>Lastname: </strong>@Html.DisplayFor(item => item.Person.LastName)
                                     <br />
-                                    City: @Html.DisplayFor(item => item.Person.City)
                                     <br />
-                                    Preference: @Html.DisplayFor(item => item.Person.Preference)
+                                    <strong>Gender: </strong>@Html.DisplayFor(item => item.Person.Gender)
+                                    <br />
+                                    <br />
+                                    <strong>City: </strong>@Html.DisplayFor(item => item.Person.City)
+                                    <br />
+                                    <br />
+                                    <strong>Preference: </strong>@Html.DisplayFor(item => item.Person.Preference)
                                     <br />
                                 </td>
                             </tr>
@@ -66,7 +70,6 @@
                                 <td>
                                      @Html.DisplayFor(item => item.Person.PresentationText)
                                     <br />
-
                                 </td>
                             </tr>
                         </tbody>

@@ -72,6 +72,7 @@ namespace DataLayer.Repositories
             dataContext.User.Add(examplePerson2);
             dataContext.User.Add(examplePerson3);
             dataContext.User.Add(examplePerson4);
+
             dataContext.SaveChanges();
             
         }

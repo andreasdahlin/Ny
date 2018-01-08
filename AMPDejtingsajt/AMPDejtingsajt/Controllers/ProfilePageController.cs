@@ -78,21 +78,29 @@ namespace AMPDejtingsajt.Controllers
         [HttpPost]
         public ActionResult Edit(Person person, HttpPostedFileBase upload)
         {
-            if (upload != null && upload.ContentLength > 0)
+            try
             {
-                person.FileName = upload.FileName;
-                person.ContentType = upload.ContentType;
-
-                using (var reader = new BinaryReader(upload.InputStream))
+                if (upload != null && upload.ContentLength > 0)
                 {
-                    person.File = reader.ReadBytes(upload.ContentLength);
+                    person.FileName = upload.FileName;
+                    person.ContentType = upload.ContentType;
+
+                    using (var reader = new BinaryReader(upload.InputStream))
+                    {
+                        person.File = reader.ReadBytes(upload.ContentLength);
+                    }
                 }
+                personRepository.Edit(person);
+
+                personRepository.Save(person);
+
+                return RedirectToAction("Index", "Home", new { area = "" });
             }
-            personRepository.Edit(person);
-
-            personRepository.Save(person);
-
-            return RedirectToAction("Index", "Home", new { area = "" });
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         public ActionResult Image(int id)
@@ -124,7 +132,7 @@ namespace AMPDejtingsajt.Controllers
                     db.FriendRequest.Add(friendRequest);
                     db.SaveChanges();
 
-                    return RedirectToAction("User", "ProfilePage", new { id = receiverID });
+                    return RedirectToAction("User", "Friends", new { id = senderID });
                 }
 
                 else {
