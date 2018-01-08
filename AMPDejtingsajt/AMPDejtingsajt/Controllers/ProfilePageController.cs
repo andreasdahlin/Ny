@@ -47,7 +47,7 @@ namespace AMPDejtingsajt.Controllers
                 model.Message = message;
 
                 ViewBag.UserProfile = id;
-
+                ViewBag.SendingProfile = personid;
                 return View(model);
             }
         }
@@ -100,27 +100,6 @@ namespace AMPDejtingsajt.Controllers
             var user = personRepository.GetById(id);
 
             return File(user.File, user.ContentType);
-        }
-
-
-        public void AddMessage(int receiverID)
-        {
-            using (DataContext db = new DataContext())
-            {
-                string senderID = (string)(Session["PersonID"]);
-                int newSenderID = Int32.Parse(senderID);
-                var message = new Message
-                {
-                    SenderId = newSenderID,
-                    RecieverId = receiverID,
-                    MessageText = "In progress",
-                    MessageDate = DateTime.Today
-                };
-
-                db.Message.Add(message);
-                db.SaveChanges();
-
-            }
         }
 
         public ActionResult AddFriend(int receiverID)

@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using DataLayer.Models;
+using System.Web.Http;
+using AMPDejtingsajt.App_Start;
 
 namespace AMPDejtingsajt
 {
@@ -16,6 +18,7 @@ namespace AMPDejtingsajt
         {
             Database.SetInitializer(new DataContextInitializer());
 
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 

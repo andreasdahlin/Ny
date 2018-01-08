@@ -9,7 +9,6 @@ namespace DataLayer.Models
     {
         public int MessageID { get; set; }
         public string MessageText { get; set; }
-        public DateTime MessageDate { get; set; }
         public Person Reciever { get; set; }
         public Person Sender { get; set; }
 
