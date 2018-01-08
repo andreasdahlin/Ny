@@ -14,13 +14,27 @@ namespace AMPDejtingsajt.Controllers
 
         public ActionResult Index()
         {
+            if(Session["PersonID"] != null)
+            {
+                string personid = (string)(Session["PersonID"]);
+                int personIdInt = Int32.Parse(personid);
+                var friendRequests = dataContext.FriendRequest.Where(p => p.ReceiverId == personIdInt).
+                    Where(p => p.Status == "In progress").
+                    ToList();
+                if (friendRequests.Any())
+                {
+                    ViewBag.FriendMessage = "New friendrequest";
+                }
+            }
+
+                var profiles = dataContext.User.ToList();
+                ViewBag.ExamplePerson = "/Images/example1.jpg";
+                ViewBag.ExamplePersonTwo = "/Images/example2.jpg";
+                ViewBag.ExamplePersonThree = "/Images/example3.jpg";
+                ViewBag.ExamplePersonFour = "/Images/example4.png";
+                return View(profiles);
             
-            var profiles = dataContext.User.ToList();
-            ViewBag.ExamplePerson = "/Images/example1.jpg";
-            ViewBag.ExamplePersonTwo = "/Images/example2.jpg";
-            ViewBag.ExamplePersonThree = "/Images/example3.jpg";
-            ViewBag.ExamplePersonFour = "/Images/example4.png";
-            return View(profiles);
+           
         }
 
         public bool CheckForFriendRequests()

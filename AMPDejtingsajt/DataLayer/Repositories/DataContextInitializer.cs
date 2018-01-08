@@ -20,7 +20,7 @@ namespace DataLayer.Repositories
                 Gender = "Male",
                 City = "Stockholm",
                 Mail = "jesper@live.se",
-                UserName = "JesperAN",
+                UserName = "Jesper",
                 Password = "test",
                 PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 isSearchable = false
@@ -34,7 +34,7 @@ namespace DataLayer.Repositories
                 Gender = "Female",
                 City = "Stockholm",
                 Mail = "Vvictoria@live.se",
-                UserName = "VictoriaSV",
+                UserName = "Victoria",
                 Password = "test",
                 PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 isSearchable = false
@@ -48,7 +48,7 @@ namespace DataLayer.Repositories
                 Gender = "Male",
                 City = "Stockholm",
                 Mail = "robert@live.se",
-                UserName = "RobertJA",
+                UserName = "Robert",
                 Password = "test",
                 PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 isSearchable = false
@@ -62,7 +62,7 @@ namespace DataLayer.Repositories
                 Gender = "Female",
                 City = "Stockholm",
                 Mail = "britt@live.se",
-                UserName = "BrittVO",
+                UserName = "Britt",
                 Password = "test",
                 PresentationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 isSearchable = false

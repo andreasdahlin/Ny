@@ -1,4 +1,8 @@
-﻿@if (Session["PersonID"] == null)
+﻿@{ 
+    string message = ViewBag.FriendMessage;
+}
+
+@if (Session["PersonID"] == null)
 {
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Register, "Register", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
@@ -11,7 +15,7 @@ else
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.ProfilePage, "User", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Friends, "User", "Friends", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
     </ul>
-    <form class="navbar-form navbar-left" action="/Home/Create">
+    <form class="navbar-form navbar-left">
         <div class="form-group">
             <input class="form-control" id="searchInput" placeholder="Search for potential partners..">
         </div>
@@ -19,7 +23,10 @@ else
     </form>
 
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.FriendRequest, "User", "Friends", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
+        @if (message == "New friendrequest")
+        {
+        <li id"hide">@Html.ActionLink(message, "User", "Friends", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
+        }
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.UpdateProfile, "Edit", "ProfilePage", new { id = (Session["PersonID"]) }, new { @class = "nav navbar-nav" })</li>
         <li>@Html.ActionLink(AMPDejtingsajt.Internationalization.Resource.Logout, "LogOut", "Account", new { area = "" }, new { @class = "nav navbar-nav" })</li>
     </ul>
